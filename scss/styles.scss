@@ -1,0 +1,619 @@
+/*Обнуление*/
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: 400;
+}
+
+/*--------------------*/
+
+//Переменные
+$minwidth: 320px;
+$mv: 1170;
+$md1: $mv + 12;
+$md2: 992.98;
+$md3: 767.98;
+$md4: 479.98;
+//--------------------
+
+body {
+    font-family: "Noto Sans JP";
+}
+
+/* Основной блок содержащий контейнер и цветовой индикатор */
+
+.main-container {
+    display: flex;
+    @media (max-width: 666px) {
+        flex-direction: column;
+    }
+}
+
+/* Контейнер содержит сайдбар и основной контент */
+
+.container {
+    display: flex;
+    border-radius: 1%;
+    margin: 0.5%;
+    padding: 0.5%;
+    box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.8);
+    background-color: thistle;
+    @media (max-width: 666px) {
+        order: 1;
+    }
+    @media (max-width: 500px) {
+        display: block;
+    }
+}
+
+/* Сайдбар */
+
+.sidebar {
+    margin-right: 0.5%;
+    background: linear-gradient(to bottom, #0404f3, #4177b4, #8eb7e6);
+    border-radius: 1rem;
+    padding: 1%;
+    width: 35%;
+    @media (max-width: 500px) {
+        width: 100%;
+        margin: 0px 0px 10px 0px;
+    }
+}
+
+/* Сайдбар Фото*/
+
+.title-image {
+    width: 100%;
+    margin: 2%;
+    border-radius: 5% 40%;
+    @media (max-width: 500px) {
+        width: 95%;
+    }
+}
+
+/* Сайдбар Соц. сети*/
+
+.social-icons {
+    margin-bottom: 10px;
+}
+
+.social-icons ul {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icons a {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 10px;
+    border-radius: 50%;
+    padding: 6px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(0deg, #ddd, #fff);
+    transition: 0.5s;
+    @media (max-width: $md2 + px) {
+        width: 36px;
+        height: 36px;
+    }
+    @media (max-width: 666px) {
+        margin: 0px 3px;
+    }
+    @media (max-width: 500px) {
+        margin: 0px 10px;
+    }
+}
+
+.social-icons a:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.social-icons img {
+    width: 36px;
+    height: 36px;
+    @media (max-width: $md2 + px) {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+//Имя и фамилия в сайдбаре
+.sidebar-title-name {
+    color: saddlebrown;
+    font-size: 20px;
+    font-weight: 700;
+    text-shadow: 1px 2px 5px #e676d7;
+    margin-bottom: 10px;
+    text-align: center;
+    display: none;
+    @media (max-width: 500px) {
+        display: block;
+    }
+}
+
+/* Сайдбар Личные данные*/
+
+.personal-data {
+    padding: 0 0 10px 0;
+}
+
+.sidebar a {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+    color: #000;
+    @media (max-width: $md3 + px) {
+        font-size: 12px;
+    }
+}
+
+.sidebar a:hover {
+    color: aqua;
+}
+
+/* Линия розделитель*/
+
+.line {
+    border: 2px solid saddlebrown;
+    margin-bottom: 5px;
+    @media (max-width: $md3 + px) {
+        border: 1px solid saddlebrown;
+    }
+}
+
+/* Розделы */
+
+.personal-data,
+.tech-skills,
+.soft-skills,
+.hobies,
+.langs {
+    padding: 0 0 10px 0;
+    @media (max-width: $md3 + px) {
+        padding: 0px 0px 5px 0px;
+    }
+}
+
+.title-data,
+.title-tech-skills,
+.title-soft-skills,
+.title-hobies,
+.title-langs {
+    color: saddlebrown;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    @media (max-width: $md3 + px) {
+        font-size: 15px;
+    }
+}
+
+.personal-data img,
+.langs img {
+    width: 24px;
+    height: 24px;
+    top: 5px;
+    border: none;
+    border-radius: 0;
+    margin: 0 5px 0 5px;
+}
+
+.skill,
+.ukr,
+.rus,
+.eng {
+    display: flex;
+    justify-content: space-between;
+    line-height: 24px;
+    font-style: italic;
+    font-size: 14px;
+    @media (max-width: $md3 + px) {
+        font-size: 12px;
+    }
+}
+
+.hobies-items {
+    line-height: 24px;
+    font-size: 14px;
+    font-style: italic;
+    margin: 0;
+    @media (max-width: $md3 + px) {
+        font-size: 12px;
+    }
+}
+
+/* Основной контент */
+
+.main-content {
+    background-color: whitesmoke;
+    padding: 2% 1%;
+    border-radius: 1rem;
+    width: 65%;
+    @media (max-width: 500px) {
+        width: 100%;
+    }
+}
+
+/* Фамилия и имя */
+
+.title-name {
+    color: #551b4d;
+    font-size: 30px;
+    font-weight: 700;
+    text-shadow: 1px 2px 5px #e676d7;
+    margin-bottom: 20px;
+    @media (max-width: $md3 + px) {
+        font-size: 24px;
+    }
+    @media (max-width: 500px) {
+        display: none;
+    }
+}
+
+/* Роздели */
+
+.about-me,
+.experience,
+.education {
+    margin-bottom: 10px;
+    @media (max-width: $md3 + px) {
+        margin-bottom: 5px;
+    }
+}
+
+.title-about-me,
+.title-experience,
+.title-education {
+    color: #551b4d;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    @media (max-width: $md3 + px) {
+        font-size: 15px;
+    }
+}
+
+/* Подразделы */
+
+.position-work,
+.speciality-education {
+    color: #551b4d;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    @media (max-width: $md3 + px) {
+        font-size: 13px;
+    }
+}
+
+.about-me-content,
+.job-tasks,
+.extra-info {
+    line-height: 24px;
+    font-style: italic;
+    font-size: 14px;
+    color: #000;
+    @media (max-width: $md3 + px) {
+        font-size: 12px;
+    }
+}
+
+.position-and-period,
+.speciality-and-period {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.period-work,
+.period-education {
+    font-size: 12px;
+    font-weight: bold;
+    color: gray;
+    @media (max-width: $md3 + px) {
+        font-size: 10px;
+    }
+}
+
+.place-work,
+.education-place {
+    font-size: 11px;
+    font-weight: bold;
+    color: gray;
+    @media (max-width: $md3 + px) {
+        font-size: 9px;
+    }
+}
+
+/*	Галочка*/
+
+.job-task,
+.facultet,
+.form-study,
+.level-edu {
+    background: url(../icons/li.svg) 0 5px no-repeat;
+    padding: 0 0 0 20px;
+}
+
+//Блок с индикаторами цвета и языка
+.swichers {
+    margin: 0.5%;
+    padding: 0.5%;
+    @media (max-width: 666px) {
+        display: flex;
+        justify-content: space-between;
+    }
+    @media print {
+        display: none;
+    }
+}
+
+/* Цветной индикатор */
+
+.box-color {
+    display: inline-flex;
+    flex-direction: column;
+    align-self: flex-start;
+    margin: 0px 0px 10px 0px;
+    padding: 10px;
+    border-radius: 1rem;
+    box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.8);
+    background-color: thistle;
+    @media (max-width: 666px) {
+        flex-direction: row;
+        margin: 0px 10px 0px 0px;
+    }
+}
+
+.color {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.5s;
+    &:hover {
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    @media (max-width: $md3 + px) {
+        width: 24px;
+        height: 24px;
+    }
+    @media (max-width: 666px) {
+        margin-right: 5px;
+        &:last-child {
+            margin: 0px 0px 0px 0px;
+        }
+    }
+}
+
+.color:last-child {
+    margin-bottom: 0px;
+}
+
+.color-blue {
+    background-color: blue;
+}
+
+.color-pink {
+    background-color: pink;
+}
+
+.color-yellow {
+    background-color: yellow;
+}
+
+.color-red {
+    background-color: red;
+}
+
+.color-green {
+    background-color: green;
+}
+
+.color-active {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: none;
+    @media (max-width: $md3 + px) {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+.active {
+    display: block;
+    cursor: auto;
+}
+
+//lang box
+.box-lang {
+    display: inline-flex;
+    flex-direction: column;
+    align-self: flex-start;
+    padding: 10px;
+    border-radius: 1rem;
+    box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.8);
+    background-color: thistle;
+    @media (max-width: 666px) {
+        flex-direction: row;
+        margin: 0px 10px 0px 0px;
+    }
+}
+
+.box-lang-item {
+    background-color: #fff;
+    color: #000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin-bottom: 5px;
+    cursor: pointer;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.5s;
+    &:hover {
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    &:last-child {
+        margin-bottom: 0px;
+    }
+    &.lang-active {
+        background-color: #000;
+        color: #fff;
+    }
+    @media (max-width: $md3 + px) {
+        width: 24px;
+        height: 24px;
+        font-size: 10px;
+    }
+    @media (max-width: 666px) {
+        margin-right: 5px;
+        &:last-child {
+            margin: 0px 0px 0px 0px;
+        }
+    }
+}
+
+//printer
+.box-print {
+    display: inline-flex;
+    flex-direction: column;
+    align-self: flex-start;
+    padding: 10px;
+    border-radius: 1rem;
+    margin: 10px 0px 0px 0px;
+    box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.8);
+    background-color: thistle;
+    @media (max-width: 666px) {
+        flex-direction: row;
+        margin: 0px 10px 0px 0px;
+    }
+}
+.print {
+    display: flex;
+}
+.print img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.5s;
+    &:hover {
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    @media (max-width: $md3 + px) {
+        width: 24px;
+        height: 24px;
+        font-size: 10px;
+    }
+    @media (max-width: 666px) {
+        margin-right: 5px;
+        &:last-child {
+            margin: 0px 0px 0px 0px;
+        }
+    }
+}
